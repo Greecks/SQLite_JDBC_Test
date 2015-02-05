@@ -19,12 +19,11 @@ public class Main {
 
             DBUtils.openConnection(dbPath);
 
-                StringBuilder builder = new StringBuilder();
-            //
-            //
+            System.out.println("\nPrepared Statement SQL...\n");
+            DBUtils.showPreparedStatement();
 
-            //
-            //
+
+                StringBuilder builder = new StringBuilder();
 
             try {
                 while (sc.hasNextLine())
@@ -55,6 +54,7 @@ public class Main {
             }
 
             System.out.println(resBuilder.toString());
+
 
         } catch ( FileNotFoundException e) {
             e.printStackTrace();

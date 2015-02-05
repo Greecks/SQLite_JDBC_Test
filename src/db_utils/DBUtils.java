@@ -12,11 +12,10 @@ public class DBUtils {
 
     private static Connection con;
 
-    public static void openConnection(String path)
-    {
+    public static void openConnection(String path) {
         try {
             Driver driver = (Driver) Class.forName("org.sqlite.JDBC").newInstance();
-            String url = "jdbc:sqlite:"+path;
+            String url = "jdbc:sqlite:" + path;
 
             if (con == null) {
                 con = DriverManager.getConnection(url);
@@ -32,8 +31,7 @@ public class DBUtils {
         }
     }
 
-    public static void closeConnection()
-    {
+    public static void closeConnection() {
         try {
             if (con != null) {
                 con.close();
@@ -76,5 +74,24 @@ public class DBUtils {
         return list;
     }
 
+    public static void showPreparedStatement() {
+        try {
+            PreparedStatement prep = con.prepareStatement("select * FROM spr_Model WHERE name_ru= ? OR name_en= ?");
 
+            prep.setString(1, "Прадо");
+            prep.setString(2, "Golf");
+
+            ResultSet rs = prep.executeQuery();
+
+            while (rs.next()) {
+                System.out.println(rs.getString("name_ru") + " , " + rs.getString("name_en"));
+            }
+
+            rs.close();
+            prep.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
