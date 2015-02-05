@@ -19,10 +19,6 @@ public class Main {
 
             DBUtils.openConnection(dbPath);
 
-            System.out.println("\nPrepared Statement SQL...\n");
-            DBUtils.showPreparedStatement();
-
-
                 StringBuilder builder = new StringBuilder();
 
             try {
@@ -54,6 +50,9 @@ public class Main {
             }
 
             System.out.println(resBuilder.toString());
+
+            System.out.println("\nPrepared Statement SQL...\n");
+            DBUtils.showPreparedStatement();
 
 
         } catch ( FileNotFoundException e) {
