@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SQLite_DB_Testing:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SQLite_DB_Testing_jar</output-path>
+    <root id="archive" name="SQLite_DB_Testing.jar">
+      <element id="module-output" name="SQLite_DB_Testing" />
+      <element id="library" level="project" name="sqlite-jdbc-3.5.9-universal" />
+    </root>
+  </artifact>
+</component>
