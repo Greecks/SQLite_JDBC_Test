@@ -2,7 +2,7 @@
 
 select * from spr_Model;            select * from spr_Transmission      ;
 select
-* from spr_Color;
+ * from spr_Color;
 sel
 ect * f
 rom s
